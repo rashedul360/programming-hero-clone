@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <script
+      src="https://kit.fontawesome.com/a29ee8e430.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>i'm trying to clone programing hero</title>
+  </head>
+  <header class="">
+    <div class="fixed-top" style="background-color: #6047EC;">
+       <nav class="container navbar navbar-expand-lg ">
+      <div class="container-fluid">
+        <img src="images/logo.png" alt="" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <img src="data:image/png;base64,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" alt="">
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">about</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">about</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">about</a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </div>
+   
+    <!-- coresel part for slider -->
+    <div
+      id="carouselExampleControls"
+      class="container carousel slide my-5"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row align-items-center">
+            <div class="col-lg-7 animate__animated animate__fadeInLeft" id="col-item">
+              <h2 class="text-white " style="font-size: 40px; margin-bottom: 50px;">
+                Learn Effectively that will take you towards your goal
+              </h2>
+              <p  style="margin-bottom: 40px;"class="text-white ">
+                কোর্সের অংশ হিসেবে হাতে কলমে নতুন এগারোটা প্রজেক্ট (এসাইনমেন্ট)
+                করবে তুমি। আমরা তোমার প্রজেক্ট এর ফিডব্যাক দিবো। মার্কস দিবো।
+                যাতে প্রফেশনাল ওয়েবসাইট বানিয়েই চাকরির ইন্টারভিউতে যেতে পারো। 💪
+              </p>
+
+              <a class="a-tag-design " href=""
+                >enroll course <i class="fas fa-arrow-alt-circle-right"></i
+              ></a>
+            </div>
+            <div class="col-lg-5 animate__animated  animate__fadeInRight">
+              <img
+                src="https://web.programming-hero.com/public/1622955529676.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <!-- <img
+            src="images/banner-images/headphone.png"
+            class="d-block w-100"
+            alt="..."
+          /> -->
+        </div>
+        <div class="carousel-item">
+          <div class="row align-items-center">
+            <div class="col-lg-7 animate__animated animate__fadeInLeft" id="col-item">
+              <h2 class="text-white" style="font-size: 40px; margin-bottom: 50px;" >
+                Got stuck? We will always be there for you.
+              </h2>
+              <p style="margin-bottom: 40px;" class="text-white">
+                ২৪ ঘন্টার মধ্যে কোর্স রিলেটেড সকল প্রশ্নের উত্তর দেয়ার জন্য
+                সাতজন প্রফেশনাল ওয়েব ডেভেলপার স্ট্যান্ডবাই থাকে (ছুটির দিন
+                বাদে)। প্রতিদিন তিনবার গুগল মিট এ স্ক্রিনশেয়ার করে সমস্যা সমাধান
+                করতে পারবে। 🥊
+              </p>
+
+              <a class="a-tag-design" href=""
+                >enroll course <i class="fas fa-arrow-alt-circle-right"></i
+              ></a>
+            </div>
+            <div class="col-lg-5 animate__animated  animate__fadeInRight">
+              <img
+                src="https://web.programming-hero.com/public/1622956051167.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <!-- <img
+            src="images/banner-images/tv.png"
+            class="d-block w-100"
+            alt="..."
+          /> -->
+        </div>
+
+        <div class="carousel-item">
+          <div class="row align-items-center">
+            <div class="col-lg-7 animate__animated animate__fadeInLeft" id="col-item">
+              <h2 style="font-size: 40px; margin-bottom: 50px;"class="text-white">
+                Master everything you need to become a web developer.
+              </h2>
+              <p style="margin-bottom: 40px;" class="text-white">
+                ফ্রন্টএন্ড (HTML, CSS, JavaScript, ES6, bootstrap, React,
+                charting), ব্যাকএন্ড (node, express, API), ডাটাবেজ (mongodb),
+                ক্রোম ডেভ টুল, হোস্টিং, গিটহাব, ইন্টারভিউ প্রবলেম সলভিং -
+                সবকিছু!
+              </p>
+
+              <a class="a-tag-design" href=""
+                >enroll course <i class="fas fa-arrow-alt-circle-right"></i
+              ></a>
+            </div>
+            <div class="col-lg-5 animate__animated  animate__fadeInRight">
+              <img
+                src="https://web.programming-hero.com/public/1622956215261.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <!-- <img
+            src="images/banner-images/xbox.png"
+            class="d-block w-100"
+            alt="..."
+          /> -->
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </header>
+  <body>
+    <main>
+      <section class="batch-start-time-container">
+        <div class="mx-auto batch-start-time" style="width: 85%">
+          <h2 class="text-center">পরবর্তী ব্যাচের সময় সূচি</h2>
+          <div class="row">
+            <div class="col-lg-6">
+            
+                <i
+                  style="    background-color: #6124EB;
+                  color: white;
+                  padding: 5px;
+                  border-radius: 5px;margin-right: 5px;"
+                  class="fas fa-calendar-week one"
+                ></i
+                >রেজিস্ট্রেশন শুরু: ডিসেম্বর ১০, ২০২১ (শুক্রবার)
+            </p>
+              
+                <i style="padding: 6px;
+                color: white;
+                background-image: linear-gradient( 
+            -45deg
+             ,#fc5e51,#f59e75);
+                border-radius: 8px;"class="far fa-bookmark two"></i> রেজিস্ট্রেশন শেষ: ডিসেম্বর
+                ২৪, ২০২১ (শুক্রবার)
+        </p>
+            </div>
+            <div class="col-lg-6">
+             
+                <i style="    background-image: linear-gradient( 
+                  -45deg
+                   ,#ff9c35,#ffd019);
+                      padding: 4px;
+                      border-radius: 6px;
+                      color: white;
+                      font-size: 17px;
+                  }" class="far fa-bell three"></i> ব্যাচের ওরিয়েন্টশন: ডিসেম্বর
+                ২৮, ২০২১ (মঙ্গলবার)
+            </p>
+              
+                <i style="    background-image: linear-gradient( 
+                  -45deg
+                   ,#ff193f,#ff35b4);
+                      padding: 3px;
+                      color: white;
+                      font-size: 15px;
+                      border-radius: 4px;"class="fas fa-tv four"></i> ক্লাস শুরু: ডিসেম্বর ৩১,
+                ২০২১(শুক্রবার)
+            </p>
+            </div>
+            <div class="">
+             <p class="five-batch"href="">তুমি ৫ম ব্যাচে এনরোল করতে আগ্রহি হলে, ওয়েবসাইটে রেজিস্ট্রেশন করে রাখো
+                 <a class="five-batch-anchore" href="">registration <i class="fas fa-arrow-alt-circle-right"></i></a>
+            </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="fourse-summary-container">
+          <div class="container">
+              <h1 class="text-center">এই কোর্স থেকে কি কি শিখতে পারবে:
+            </h1>
+            <div class="row" style="    margin-top: 78px;">
+                <div class="col-lg-5">
+         <div class="course-details" style="    padding: 9px;
+         box-shadow: 0px 0px 10px 5px #ddd;
+         border-radius: 22px;
+         height: 63%;">
+           <div>
+             <img class="course-module-img"src="images/course.png" alt="">
+             <div style="    margin-top: 23px;">
+                <a class="course-module-refister"href="">Registration is Closed
+</a>
+             </div>
+
+<div class="fourse-modules">
+  <span><i class="fas fa-video" id="check-top"></i>660 Videos</span>
+<span><i class="fab fa-quinscape" id="check-top"></i>300 Quizes</span>
+<span><i class="fas fa-tasks" id="check-top"></i>11 Assignment</span>
+</div>
+<h1 class="mx-3 my-5"> ৳ 5500</h1>
+
+           </div>
+         </div>
+                </div>
+                <div class="col-lg-7" style="    font-weight: bold;">
+            <div class="row">
+    <div class="col-lg-6 d-flex">
+        <div>
+            <i class="fas fa-check-square" id="check"></i>
+        </div>
+        <div>
+            <p>ফটাফট কয়েকটা ভিডিও দেখে HTML, CSS শিখে ফটাফট চমৎকার দুইটা ওয়েবসাইট বানিয়ে ফেলবে। এবং সেগুলার লিংক যেকারো সাথে শেয়ার করে ভাব পেটাতে পারবে</p>
+
+        </div>
+        
+    </div>
+    <div class="col-lg-6 d-flex">
+      <div>
+        <i class="fas fa-check-square" id="check"></i>
+    </div>
+    <div>
+        <p>বুটস্ট্রাপ (bootstrap) নামক পপুলার ফ্রেমওয়ার্ক এর খুঁটিনাটি ভাজা ভাজা করে ফেলবে। তারপর সেটা দিয়েও দুইটা ই-কমার্স ওয়েবসাইট বানিয়ে ফেলবে। কি মজা !
+        </p>
+
+    </div>
+    
+</div>
+    <div class="col-lg-6 d-flex">
+      <div>
+        <i class="fas fa-check-square" id="check"></i>
+    </div>
+    <div>
+        <p>জাভাস্ক্রিপ্টের ছয়টা মেইন জিনিস, জাভাস্ক্রিপ্ট দিয়ে প্রবলেম সলভিং, ইন্টারভিউ এর প্রশ্ন-উত্তর। এমনকি ES6 দিয়ে তোমার নলেজকে যোগোপযোগী করে তুলবে
+        </p>
+
+    </div>
+    
+</div>
+    <div class="col-lg-6 d-flex">
+      <div>
+        <i class="fas fa-check-square" id="check"></i>
+    </div>
+    <div>
+        <p>জাভাস্ক্রিপ্ট দিয়ে ব্যাংকের deposit, withdraw এর লাইভ ক্যালকুলেশন থাকছে। তারপরই থাকছে ই-কমার্স সাইটের শপিং কার্টের হিসাব-নিকাশ করার সিস্টেম
+        </p>
+
+    </div>
+    
+</div>
+    <div class="col-lg-6 d-flex">
+      <div>
+        <i class="fas fa-check-square" id="check"></i>
+    </div>
+    <div>
+        <p>সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool দিয়ে ডিবাগিং সম্পর্কে ধারণা দেয়া হবে।
+        </p>
+
+    </div>
+    
+</div>
+    <div class="col-lg-6 d-flex">
+      <div>
+        <i class="fas fa-check-square" id="check"></i>
+    </div>
+    <div>
+        <p>কোর্সের সবচেয়ে গুরুত্বপূর্ণ দিক হচ্ছে দুনিয়ার সবচেয়ে বেশি চাকরি যে জাভাস্ক্রিপ্ট ফ্রেমওয়ার্ক এ (React), সেটা দিয়ে পরিপূৰ্ণ একটা ওয়েবসাইট একদম শূন্য থেকে শেষ পর্যন্ত দেখানো হয়েছে।
+        </p>
+
+    </div>
+    
+</div>
+    <div class="col-lg-6 d-flex">
+      <div>
+        <i class="fas fa-check-square" id="check"></i>
+    </div>
+    <div>
+        <p>React দিয়ে সম্পূর্ণ প্রফেশনাল ওয়েবসাইট। ডাটাবেজ, সার্ভার সাইড, হোস্টিং, পেমেন্ট সিস্টেম, লগইন, রাউটিং দিয়ে ১০০% ক্লায়েন্ট-রেডি ওয়েবসাইট বানিয়ে দেখানো হবে।
+        </p>
+
+    </div>
+    
+</div>
+    <div class="col-lg-6 d-flex">
+      <div>
+        <i class="fas fa-check-square" id="check"></i>
+    </div>
+    <div>
+        <p>কাজের প্রয়োজনে Firebase Authentication, TypeScript, Sass, Tailwind, গুগল ম্যাপ api সহ এমন আরো অসংখ্য প্রয়োজনীয় টুলস এর সাথে পরিচয় করিয়ে দেয়া হবে।
+        </p>
+
+    </div>
+    
+</div>
+    <div class="col-lg-6 d-flex">
+      <div>
+        <i class="fas fa-check-square" id="check"></i>
+    </div>
+    <div>
+        <p>সর্বমোট ১১টা প্রজেক্ট তুমি নিজে করবে। আমাদের হেল্প নিয়ে। এছাড়াও ৫টা ওয়েবসাইট আমরা দেখিয়ে দিবো। যেগুলা করতে করতে তুমি নিজের অজান্তেই পরিপূর্ন ওয়েব ডেভেলপার হয়ে উঠবে।
+        </p>
+
+    </div>
+    
+</div>
+    <div class="col-lg-6 d-flex">
+      <div>
+        <i class="fas fa-check-square" id="check"></i>
+    </div>
+    <div>
+       
+        <p>এনরোল করার ১২ সপ্তাহের মধ্যে পুরা কোর্স সিরিয়াসলি কমপ্লিট কারীদের নিয়ে আমরা তৈরি করবো Super Charged Interviewee Club (SCIC) সিক্রেট ক্লাব। যাদের স্পেশাল ইন্টারভিউ ট্রেনিং দিয়ে রেজুমি পাঠিয়ে দিবো বিভিন্ন কোম্পানিতে ইন্টার্ন বা ডেভেলপার হিসেবে চাকরি পাওয়ার জন্য।
+
+        </p>
+
+    </div>
+    
+</div>
+    <div class="col-lg-12 d-flex">
+      <div>
+        <i class="fas fa-check-square" id="check"></i>
+    </div>
+    <div>
+        
+        <p>তবে যারা একটু ফাঁকিবাজ তাদের জন্য দুঃসংবাদ হচ্ছে। প্রত্যেক ভিডিও এর পরে প্রশ্ন থাকছে। প্রত্যেক মডিউল শেষে ফাইনাল কুইজ আছে। আর প্রত্যেকটা প্রজেক্টের পর একটা করে টেক-এওয়ে হোমওয়ার্ক আছে।<br>
+
+          এই কোর্স ফলো করে কেউ যদি ওয়েব ডেভেলপার না হতে পারে, দুনিয়ার আর কেউ তাকে ওয়েব ডেভেলপার বানাতে পারবে না।
+
+        </p>
+
+    </div>
+    
+</div>
+                </div>
+            </div>
+          </div>
+      </section>
+  
+      <section style="background: #F5F7FF;"class="have-our-course-container">
+        <div class="mx-auto" style="width:40%; padding-top: 50px;">
+         <div class="row" id="row-have-clourse">
+           <div class="col-lg-6 star-p star-x">
+            <i class="fas fa-star star"></i>
+            <p class="text-center mx-2 ">এই কোর্সের বিশেষত্ব কি?
+            </p>
+           </div>
+           <div class="col-lg-6 star-p ">
+            <i class="fas fa-pen-square star"></i>
+            <p class="text-center mx-2 ">এই কোর্স কিভাবে চলবে?
+            </p>
+           </div>
+         </div>
+        </div>    
+        
+        <section class="complete-wev-development-schedule-container " style="    margin-top: 30px;
+        padding-bottom: 103px;">
+<div class="complete-wev-development-schedule">
+  <div class="container">
+    <!-- <div class="row gx-5">
+      <div class="col-lg-3">
+        <img class="schedule-img" src="images/l-1.png" alt="">
+        <h6>এইটা কমপ্লিট ওয়েব ডেভেলপমেন্ট এর কোর্স:
+        </h6>
+        <p>শূন্য থেকে একজন জুনিয়র ওয়েব ডেভেলপার হিসেবে চাকরি পাওয়ার জন্য যা যা লাগে তার সবকিছুই ধরে ধরে শিখানো
+
+        </p>
+      </div>
+      <div class="col-lg-3">
+        <img  class="schedule-img"src="images/l-2.png" alt="">
+        <h6>আনলিমিটেড সাপোর্ট:
+        </h6>
+        <p>কোর্স চলাকালীন সময়ে ২৪ ঘন্টার মধ্যে তোমার যেকোন প্রশ্নের উত্তর দেয়া হবে (ছুটির দিন বাদে)। পেঁচগি মার
+
+        </p>
+      </div>
+      <div class="col-lg-3">
+    <img class="schedule-img"src="images/l-3.png" alt="">
+    <h6>স্পেশাল ইন্টারভিউ প্রিপারেশন গ্রূপ:
+    </h6>
+    <p>যারা ডেইলি ডেইলি কাজ করবে। প্রতিদিন ৬ থেকে ৮ ঘন্টা সময় দিবে। জানপ্রাণ দিয়ে সিরিয়াসভাবে কোর্স নির্দিষ
+
+    </p>
+      </div>
+      <div class="col-lg-3">
+    <img class="schedule-img"src="images/l-4.png" alt="">
+    <h6>জব প্লেসমেন্ট কোচ:
+    </h6>
+    <p>যারা SCIC তে সুযোগ পাবে। এবং সেটা ঠিক মতো শেষ করবে আরো ৪ থেকে ৬ সপ্তাহ লেগে থাকবে। তাদের আরো পার্সোন
+
+    </p>
+      </div>
+  </div> -->
+        <div class="row gx-5">
+        <div class="col-lg-3 shhedule ">
+          <img class="schedule-img" src="images/l-1.png" alt="">
+          <h6>এইটা কমপ্লিট ওয়েব ডেভেলপমেন্ট এর কোর্স:
+          </h6>
+          <p>শূন্য থেকে একজন জুনিয়র ওয়েব ডেভেলপার হিসেবে চাকরি পাওয়ার জন্য যা যা লাগে তার সবকিছুই ধরে ধরে শিখানো</p>
+          <a class="anchore-schedule"href="">আরও দেখুন</a>
+        </div>
+        <div class="col-lg-3 shhedule">
+          <img  class="schedule-img"src="images/l-2.png" alt="">
+        <h6>আনলিমিটেড সাপোর্ট:
+        </h6>
+        <p>কোর্স চলাকালীন সময়ে ২৪ ঘন্টার মধ্যে তোমার যেকোন প্রশ্নের উত্তর দেয়া হবে (ছুটির দিন বাদে)। পেঁচগি মার
+
+        </p>
+        <a class="anchore-schedule"href="">আরও দেখুন</a>
+        </div>
+        <div class="col-lg-3 shhedule">
+          <img class="schedule-img"src="images/l-3.png" alt="">
+          <h6>স্পেশাল ইন্টারভিউ প্রিপারেশন গ্রূপ:
+          </h6>
+          <p>যারা ডেইলি ডেইলি কাজ করবে। প্রতিদিন ৬ থেকে ৮ ঘন্টা সময় দিবে। জানপ্রাণ দিয়ে সিরিয়াসভাবে কোর্স নির্দিষ
+      
+          </p>
+          <a class="anchore-schedule"href="">আরও দেখুন</a>
+        </div>
+        <div class="col-lg-3 shhedule">
+          <img class="schedule-img"src="images/l-4.png" alt="">
+          <h6>জব প্লেসমেন্ট কোচ:
+          </h6>
+          <p>যারা SCIC তে সুযোগ পাবে। এবং সেটা ঠিক মতো শেষ করবে আরো ৪ থেকে ৬ সপ্তাহ লেগে থাকবে। তাদের আরো পার্সোন
+      
+          </p>
+          <a class="anchore-schedule"href="">আরও দেখুন</a>
+        </div>
+        <div class="col-lg-3 shhedule">
+          <img class="schedule-img"src="images/l-5.png" alt="">
+          <h6>জব প্লেসমেন্ট কোচ:
+          </h6>
+          <p>যারা SCIC তে সুযোগ পাবে। এবং সেটা ঠিক মতো শেষ করবে আরো ৪ থেকে ৬ সপ্তাহ লেগে থাকবে। তাদের আরো পার্সোন
+      
+          </p>
+          <a class="anchore-schedule"href="">আরও দেখুন</a>
+        </div>
+        <div class="col-lg-3 shhedule">
+          <img class="schedule-img"src="images/l-6.png" alt="">
+          <h6>জব প্লেসমেন্ট কোচ:
+          </h6>
+          <p>যারা SCIC তে সুযোগ পাবে। এবং সেটা ঠিক মতো শেষ করবে আরো ৪ থেকে ৬ সপ্তাহ লেগে থাকবে। তাদের আরো পার্সোন
+      
+          </p>
+          <a class="anchore-schedule"href="">আরও দেখুন</a>
+        </div>
+        <div class="col-lg-3 shhedule">
+          <img class="schedule-img"src="images/l7.png" alt="">
+          <h6>জব প্লেসমেন্ট কোচ:
+          </h6>
+          <p>যারা SCIC তে সুযোগ পাবে। এবং সেটা ঠিক মতো শেষ করবে আরো ৪ থেকে ৬ সপ্তাহ লেগে থাকবে। তাদের আরো পার্সোন
+      
+          </p>
+          <a class="anchore-schedule"href="">আরও দেখুন</a>
+        </div>
+        <div class="col-lg-3 shhedule">
+          <img class="schedule-img"src="images/l-8.png" alt="">
+          <h6>জব প্লেসমেন্ট কোচ:
+          </h6>
+          <p>যারা SCIC তে সুযোগ পাবে। এবং সেটা ঠিক মতো শেষ করবে আরো ৪ থেকে ৬ সপ্তাহ লেগে থাকবে। তাদের আরো পার্সোন
+      
+          </p>
+          <a class="anchore-schedule"href="">আরও দেখুন</a>
+        </div>
+      </div>
+</div>
+      </section>
+      </section>
+      <section class="whos-have-this-course-container container ">
+        <div class="row">
+          <!-- <div class="col-lg-6 " style="    background: antiquewhite;
+          border-radius: 20px;
+          padding: 67px;"> -->
+          <div class="col-lg-6" style="     box-shadow: -1px 6px 11px 7px #ddd;
+          padding: 24px;
+          border-radius: 36px;
+          margin-top: 78px;     height: 100%;">
+<img style="width: 99%; border-radius: 20px;" src="images/course.png" alt="">
+<div style="    margin-top: 28px;">
+  <p><a class="course-module-refisters" href="">registration Closed</a></p>  
+</div>
+
+          </div>
+          <div class="col-lg-6" style="margin-top: 8%;">
+<div style="">
+  <ul class="class-content overflow-auto" style="height:470px">
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+ <li><a href="">getting started deb development with jhankar</a></li>
+
+
+  </ul>
+</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
